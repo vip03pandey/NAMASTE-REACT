@@ -1,3 +1,53 @@
-#heading{
-    color: aquamarine;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.logo{
+    width: 120px;
+}
+.nav-items{
+    padding: 0px 20px;
+    font-size: 20px;
+}
+.nav-items ul{
+    display: flex;
+    list-style: none;
+    
+}
+.nav-items ul li{
+    padding: 10px;
+    margin: 10px;
+}
+.res-card{
+    width: 250px;
+    /* height: 350px; */
+    padding: 5px 5px ;
+    border-radius: 2%;
+    font-family: Basis_Grotesque_Pro_Bold;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.search{
+    padding: 10px 10px;
+}
+.res-img{
+    width: 100%;
+    height: 200px;
+    border-radius: 2%;
+}
+.rest-conatiner{
+    /* display: flex;
+    flex-wrap: wrap;
+    margin: 20px; */
+    padding-right: 110px;
+    padding-left: 110px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }

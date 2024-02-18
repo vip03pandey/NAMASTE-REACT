@@ -1,12 +1,6 @@
-// creating nested structur
-// <div id="child">
-//  <div id="child">
-    //   <h1>hello</h1>
-    //   <h2></h2>
-    // </div>
-    // </div>
 
-
+import React from "react"
+import ReactDOM from "react-dom/client";
 
 const parent =React.createElement(
     "div", 
@@ -15,7 +9,7 @@ const parent =React.createElement(
         "div", 
         {id:"child"}, 
         // if we have sibling like two h1 tags then we have to put it into array
-       [React.createElement("h1",{},("I am h1 tag")),
+       [React.createElement("h1",{},("This is namaste react")),
         React.createElement("h2",{},("I am h2 tag"))
     ]
     ),
