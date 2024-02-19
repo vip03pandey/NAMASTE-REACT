@@ -18,3 +18,7 @@ npx parcel build index.html ( creates production ready files)
 - Tree shaking ( remove unused code)
 - Bundling
 - HTTPs
+
+<!-- React Hooks -->
+- useState() -> superpowerful state variables
+- useEffect() -> 
