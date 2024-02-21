@@ -22,3 +22,10 @@ npx parcel build index.html ( creates production ready files)
 <!-- React Hooks -->
 - useState() -> superpowerful state variables
 - useEffect() -> 
+
+
+<!--  -->
+React Fiber
+---> Virtual DOM is representation of actual DOM or a normal js object 
+
+

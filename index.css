@@ -1,5 +1,6 @@
 
 .header{
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -24,7 +25,7 @@
     cursor: pointer;
 }
 .res-card{
-    width: 250px;
+   max-width: 250px;
     /* height: 350px; */
     padding: 5px 5px ;
     border-radius: 2%;
@@ -35,6 +36,7 @@
 .res-card:hover{
     border: 1px solid black;
     cursor: pointer;
+    transition: all 0.05s ease 0s;
 }
 
 .search{
@@ -43,7 +45,9 @@
 .res-img{
     width: 100%;
     height: 200px;
+    margin-bottom: 0.5px;
     border-radius: 2%;
+    /* padding: 0.5px, 0.5px; */
 }
 .rest-conatiner{
     /* display: flex;
@@ -54,8 +58,54 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    background-color: rgb(244, 244, 244);
 }
 .filter-btn{
     margin: 10px;
     cursor: pointer;
+    font-size: 10px;
+}
+.restname{
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: Basis_Grotesque_Pro_Bold;
+    padding-top: 0.5px;
+}
+.restcuisines{
+    max-width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    white-space:nowrap;
+    font-size: 18px;
+}
+.shimmer-container{
+    padding-right: 110px;
+    padding-left: 110px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.shimmer-card{
+    margin: 20px;
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216)
+
+}
+.login{
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(239, 152, 46);
+    font-weight: 700;
+    font-family: Basis_Grotesque_Pro_Bold;
+}
+.filter{
+    display: flex;
+    justify-content: center;
+
 }
