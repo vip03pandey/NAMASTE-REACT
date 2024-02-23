@@ -2,7 +2,7 @@ import Restrocard from "./Restrocard"
 
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
-
+import { Link } from "react-router-dom"
 //State Variable -- super powerful variable
 
 const Body =()=>{
@@ -72,7 +72,7 @@ const Body =()=>{
             <div className="rest-conatiner">
                    {
                     filteredRestro.map((restaurant)=>
-                    (<Restrocard key={restaurant.info.id} resData={restaurant} />
+                    (<Link to={"/restaurant/"+ restaurant.info.id}> <Restrocard key={restaurant.info.id} resData={restaurant} /></Link>
                     ))
                 }
             </div>
