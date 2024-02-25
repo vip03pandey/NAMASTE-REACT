@@ -1,4 +1,5 @@
 import Restrocard from "./Restrocard"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
@@ -27,10 +28,15 @@ const Body =()=>{
          setfilteredRestro(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
+    const onlineStatus=useOnlineStatus();
 
+    if(onlineStatus===false)
+    return (
+    <h1>Check your internet</h1>
+    );
     // conditional rendering
   
-    return listOFRestro.length=== 0 ?(
+    return listOFRestro.length === 0 ?(
         <Shimmer/>):(
         <div className="body">
 
