@@ -38,17 +38,19 @@ const Body =()=>{
   
     return listOFRestro.length === 0 ?(
         <Shimmer/>):(
-        <div className="body">
+        <div className="bg-gray-50">
 
             {/* filter-button */}
-            <div className="filter">
-                <div className="search">
+            <div className="flex items-center justify-center">
+                <div className="m-3 p-4">
                     <input 
-                    type="text" className="search-box" 
+                    type="text" className="border border-solid border-black rounded-lg text-center placeholder:italic placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" 
+                    placeholder="Search for restaurant..."
                     value={searchText} 
                     onChange={(e)=>setsearchText(e.target.value)}>
                     </input>
-                    <button onClick={()=>{
+                    <button className="p-4 m-4 border border-solid border-black rounded-lg py-1 px-2 bg-orange-500" 
+                       onClick={()=>{
                         const filteredRestro=(listOFRestro.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase())));
                         setsearchText(" ");
                         setfilteredRestro(filteredRestro);
@@ -58,7 +60,7 @@ const Body =()=>{
                 
                 
                 <button 
-                className="filter-btn" 
+                className="p-4 m-4 border border-solid border-black rouded-lg py-1 px-2 rounded-lg" 
                 onClick={()=>{
                     // const filteredList=listOFRestro.filter(
                     //     (res) => res.info.avgRating >4.2
@@ -74,8 +76,8 @@ const Body =()=>{
                 </button>
 
             </div>
-
-            <div className="rest-conatiner">
+            
+            <div className="flex flex-wrap justify-center">
                    {
                     filteredRestro.map((restaurant)=>
                     (<Link to={"/restaurant/"+ restaurant.info.id}> <Restrocard key={restaurant.info.id} resData={restaurant} /></Link>

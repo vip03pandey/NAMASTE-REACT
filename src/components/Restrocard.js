@@ -5,13 +5,13 @@ const Restrocard=(props)=>{
     const {resData}= props;
     const {cloudinaryImageId,name,cuisines,costForTwo,avgRating}=resData?.info
     return (
-        <div className="res-card "  style={stylecard}>
+        <div className="m-4 p-4 w-[300px] hover:border border-solid border-black rounded-lg hover:cursor-pointer">
             
-            <img className="res-img" alt="res-logo" src={CDN_URL+ cloudinaryImageId}></img>
-             <div className="restname"> <h3>{name}</h3></div>
-             <div className="restcuisines"><h5>{cuisines.join(",")}</h5></div>
-             <div className="restcost"><h5>{costForTwo}</h5></div>
-            <h5>{avgRating}⭐️</h5>
+            <img className="rounded-lg py-px-0 h-[182px] w-[273px]" alt="res-logo" src={CDN_URL+ cloudinaryImageId}></img>
+             <div className="font-bold py-4 text-lg"> <h3>{name}</h3></div>
+             <div className="truncate py-0"><h5>{cuisines.join(",")}</h5></div>
+             <div className="restcost font-semibold"><h5>{costForTwo}</h5></div>
+            <h5 className="font-semibold">⭐️{avgRating} </h5>
             <h5> {resData.info.sla.deliveryTime} mins</h5>
             </div>
             
