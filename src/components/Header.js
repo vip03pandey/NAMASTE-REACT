@@ -1,16 +1,18 @@
 import { LOGO_URL } from "../utils/constant";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Usercontext from "../utils/Usercontext";
 export const Header=()=>{
 
     const[btnnameReact,setBtnName]=useState("Login")
-
+    const data=useContext(Usercontext);
+    console.log(data);
     const onlineStatus=useOnlineStatus();
     return (
-        <div className="flex justify-between bg-white shadow-sm m-2">
+        <div className=" sm:flex justify-between bg-white shadow-sm flex-wrap">
             <div className="logo-container">
-                <img className="w-28" src= {LOGO_URL} ></img>
+                <img className="w-28 mx-auto" src= {LOGO_URL} ></img>
                   </div>
                   <div className="flex items-center">
                     <ul className="flex p-4 m-6">

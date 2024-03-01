@@ -1,4 +1,4 @@
-import Restrocard from "./Restrocard"
+import Restrocard,{withPromotedlabel} from "./Restrocard"
 import useOnlineStatus from "../utils/useOnlineStatus"
 
 import { useEffect, useState } from "react"
@@ -11,7 +11,9 @@ const Body =()=>{
     const [searchText,setsearchText]=useState("");
     const [filteredRestro,setfilteredRestro]=useState([])
 
+    const restrocardPromoted=withPromotedlabel(Restrocard);
 
+    console.log(listOFRestro);
     useEffect(()=>{
         fetchData();
     },[]);
@@ -23,7 +25,6 @@ const Body =()=>{
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61450&lng=77.30630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
         const json= await data.json();
-        console.log(json);
          setListofRestro(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
          setfilteredRestro(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
@@ -36,7 +37,7 @@ const Body =()=>{
     );
     // conditional rendering
   
-    return listOFRestro.length === 0 ?(
+    return ( listOFRestro.length === 0 ?(
         <Shimmer/>):(
         <div className="bg-gray-50">
 
@@ -44,7 +45,7 @@ const Body =()=>{
             <div className="flex items-center justify-center">
                 <div className="m-3 p-4">
                     <input 
-                    type="text" className="border border-solid border-black rounded-lg text-center placeholder:italic placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" 
+                    type="text" className="border border-solid border-black rounded-lg placeholder:italic placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm p-1" 
                     placeholder="Search for restaurant..."
                     value={searchText} 
                     onChange={(e)=>setsearchText(e.target.value)}>
@@ -80,11 +81,13 @@ const Body =()=>{
             <div className="flex flex-wrap justify-center">
                    {
                     filteredRestro.map((restaurant)=>
-                    (<Link to={"/restaurant/"+ restaurant.info.id}> <Restrocard key={restaurant.info.id} resData={restaurant} /></Link>
-                    ))
-                }
+                    (<Link to={"/restaurant/"+ restaurant.info.id}>
+                   
+                     <Restrocard key={restaurant.info.id} resData={restaurant} />
+                     </Link>
+                    ))}
             </div>
         </div>
-    )
+    ))
 }
 export default Body

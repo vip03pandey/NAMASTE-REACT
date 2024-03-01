@@ -16,5 +16,15 @@ const Restrocard=(props)=>{
             </div>
             
     )
+};
+// higher order componet
+// input - restaurantCard => 
+export const withPromotedlabel=(Restrocard)=>{
+    return (props)=>{
+        <div>
+            <label>Promoted</label>
+            <Restrocard {...props}/>
+        </div>
+    }
 }
 export default Restrocard
