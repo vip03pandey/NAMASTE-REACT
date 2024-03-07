@@ -8,16 +8,20 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import Error from "./components/Error";
 import Restromenu from "./components/Restromenu";
 import { Suspense,fallback } from "react";
-
+import { Provider } from "react-redux";
+import appstore from "./utils/appstore";
+import Cart from "./components/Cart";
 
 // const Contact=lazy(()=> import("./components/Contact"));
 const AppLayout =()=>{
    return (
+    <Provider store={appstore}>
     <div className="app">
         <Header/>
         <Outlet/>
        
     </div>
+    </Provider>
    );
 };
 
@@ -46,6 +50,10 @@ const AppRouter=createBrowserRouter([
         {
             path:"/restaurant/:resId",
             element:<Restromenu/>
+        },
+        {
+            path:"/Cart",
+            element:<Cart/>
         }
     ],
         errorElement:<Error/>

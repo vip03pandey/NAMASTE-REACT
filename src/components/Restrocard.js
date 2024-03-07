@@ -7,7 +7,7 @@ const Restrocard=(props)=>{
     return (
         <div className="m-4 p-4 w-[300px] hover:border border-solid border-black rounded-lg hover:cursor-pointer">
             
-            <img className="rounded-lg py-px-0 h-[182px] w-[273px]" alt="res-logo" src={CDN_URL+ cloudinaryImageId}></img>
+            <img className="rounded-lg py-px-0 h-[186.66px] w-[286px]" alt="res-logo" src={CDN_URL+ cloudinaryImageId}></img>
              <div className="font-bold py-4 text-lg"> <h3>{name}</h3></div>
              <div className="truncate py-0"><h5>{cuisines.join(",")}</h5></div>
              <div className="restcost font-semibold"><h5>{costForTwo}</h5></div>
