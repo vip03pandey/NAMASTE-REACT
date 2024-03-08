@@ -39,7 +39,7 @@ function Restromenu() {
        key={category?.card?.card.title} 
        data={category?.card?.card}
        showItems={index===showIndex ? true:false}
-       setshowIndex={()=>setshowIndex(index)}
+       setshowIndex={()=>setshowIndex(showIndex=== index ? null : index)}
         />
       ))}
     </div>

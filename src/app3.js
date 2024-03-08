@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import Error from "./components/Error";
 import Restromenu from "./components/Restromenu";
-import { Suspense,fallback } from "react";
+// import { Suspense,fallback } from "react";
 import { Provider } from "react-redux";
 import appstore from "./utils/appstore";
 import Cart from "./components/Cart";
